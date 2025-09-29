@@ -1,11 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { DishesList } from './components/DishesList/DishesList';
+import { Footer } from './components/Footer/Footer';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.content}>
+        <DishesList />
+      </View>
+      <View style={styles.footer}>
+        <Footer />
+      </View>
     </View>
   );
 }
@@ -13,8 +18,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  content: {
+    flex: 1,
+  },
+  footer: {
+    justifyContent: 'flex-end',
   },
 });
