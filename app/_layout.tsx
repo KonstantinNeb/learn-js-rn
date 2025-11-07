@@ -1,12 +1,25 @@
 import { Stack } from 'expo-router';
+import { Provider } from 'react-redux';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { store } from '../src/store';
 
-export default function Layout() {
+export default function RootLayout() {
   return (
-    <Stack screenOptions={{ headerTitleAlign: 'center' }}>
-      <Stack.Screen name="index" options={{ title: 'Главная' }} />
-      <Stack.Screen name="category" options={{ title: 'Категории' }} />
-      <Stack.Screen name="catalog" options={{ title: 'Каталог' }} />
-      {/*<Stack.Screen name="basket" options={{ title: 'Корзина' }} />*/}
-    </Stack>
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="category/[id]"
+            options={{
+              headerShown: true,
+              title: '',
+              // headerBackTitleVisible: false,
+              animation: 'slide_from_right',
+            }}
+          />
+        </Stack>
+      </SafeAreaProvider>
+    </Provider>
   );
 }
