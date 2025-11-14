@@ -5,7 +5,7 @@ export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: true, // теперь заголовки у табов тоже отображаются
+        headerShown: true,
         tabBarActiveTintColor: '#1abd57',
         tabBarInactiveTintColor: '#888',
       }}

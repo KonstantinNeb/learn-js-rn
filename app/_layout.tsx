@@ -14,7 +14,6 @@ export default function RootLayout() {
             options={{
               headerShown: true,
               title: '',
-              // headerBackTitleVisible: false,
               animation: 'slide_from_right',
             }}
           />
