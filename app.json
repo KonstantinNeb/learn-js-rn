@@ -1,19 +1,26 @@
 {
   "expo": {
-    "name": "learn-js-rn",
-    "slug": "learn-js-rn",
+    "name": "Learn js rn app",
+    "slug": "learn-js-rn-app",
+    "description": "Приложение для заказа готовой еды",
     "version": "1.0.0",
     "scheme": "learnjsrn",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "backgroundColor": "#16171D",
+    "primaryColor": "#6C38CC",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
       "adaptiveIcon": {
