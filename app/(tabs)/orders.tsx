@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, StyleSheet, Image, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Modal } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../src/store';
 import { clearCart } from '../../src/store/cartSlice';
@@ -46,16 +46,20 @@ export default function OrdersScreen() {
             <View style={styles.checkCircle}>
               <Text style={styles.checkMark}>✔</Text>
             </View>
-
             <Text style={styles.modalTitle}>You Place the Order Successfully</Text>
-
             <Text style={styles.modalText}>
               You placed the order successfully. You will get your food within 25 minutes. Thanks
               for using our services. Enjoy your food :)
             </Text>
 
             <TouchableOpacity onPress={() => setModalVisible(false)} style={{ marginTop: 10 }}>
-              <Text style={styles.modalButton} onPress={() => dispatch(clearCart())}>
+              <Text
+                style={styles.modalButton}
+                onPress={() => {
+                  dispatch(clearCart());
+                  setModalVisible(false);
+                }}
+              >
                 KEEP BROWSING
               </Text>
             </TouchableOpacity>
